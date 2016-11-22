@@ -16,6 +16,7 @@
 
     "node_modules/estella-core/typings/estella-core-server.d.ts",
     "node_modules/estella-example-air-hockey/typings/estella-example-air-hockey-server.d.ts",
+    "node_modules/estella-example-tanks/typings/estella-example-tanks-server.d.ts",
     "app.ts"
   ]
 

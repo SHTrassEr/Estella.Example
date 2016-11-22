@@ -36,6 +36,7 @@
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="Scripts\AirHockey\AirHockey.ts" />
     <TypeScriptCompile Include="routes\index.ts" />
+    <TypeScriptCompile Include="Scripts\Tanks\tanks.ts" />
     <TypeScriptCompile Include="Scripts\typings\circular-json\circular-json.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\express\express.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
@@ -70,8 +71,8 @@
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
     <Content Include="Scripts\AirHockey\tsconfig.json" />
+    <Content Include="Scripts\Tanks\tsconfig.json" />
     <Content Include="tsconfig.json" />
-    <Content Include="views\king.jade" />
     <Content Include="views\airHockey.jade" />
     <Content Include="views\tanks.jade" />
     <Content Include="views\contact.jade" />
@@ -91,6 +92,7 @@
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Scripts\Tanks\" />
     <Folder Include="Scripts\typings\" />
     <Folder Include="Scripts\typings\circular-json\" />
     <Folder Include="Scripts\typings\express\" />

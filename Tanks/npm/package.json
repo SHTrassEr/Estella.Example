@@ -1,0 +1,24 @@
+{
+  "name": "estella-example-tanks",
+  "version": "0.0.2",
+  "description": "Simple typescript multiplayer engine",
+  "main": "lib/estella-example-tanks-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SHTrassEr/Estella.Example.git"
+  },
+  "keywords": [
+    "typescript",
+    "multiplayer",
+    "engine"
+  ],
+  "author": "SHTrassEr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SHTrassEr/Estella.Example/issues"
+  },
+  "homepage": "https://github.com/SHTrassEr/Estella.Example#readme"
+}

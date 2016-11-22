@@ -1,0 +1,35 @@
+{
+  "name": "estella-example-tanks",
+  "version": "0.0.2",
+  "description": "Estella example",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SHTrassEr/Estella.Example.git"
+  },
+  "keywords": [
+    "typescript",
+    "multiplayer",
+    "engine"
+  ],
+  "author": "SHTrassEr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SHTrassEr/Estella.Example/issues"
+  },
+  "homepage": "https://github.com/SHTrassEr/Estella.Example#readme",
+
+  "dependencies": {
+    "estella-core": "0.0.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-insert": "^0.5.0",
+    "gulp-typescript": "^3.0.0",
+    "merge2": "^1.0.2",
+    "typescript": "^2.0.10"
+  }
+}

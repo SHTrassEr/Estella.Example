@@ -46,3 +46,11 @@ var server = new WebSocketServerAirHockey({ port: 62787 });
 var webSocketGameServerAirHockey = new EstellaAirHockey.Example.AirHockey.WebSocketGameServer(server);
 webSocketGameServerAirHockey.start();
 
+
+
+import EstellaTanks from 'estella-example-tanks';
+var WebSocketServerTanks = require('ws').Server;
+var server = new WebSocketServerTanks({ port: 62785 });
+var webSocketGameServerTanks = new EstellaTanks.Example.Tanks.WebSocketGameServer(server);
+webSocketGameServerTanks.start();
+

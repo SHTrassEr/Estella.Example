@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "declaration": false,
+    "sourceMap": false,
+    "target": "es6",
+    "outDir": "./out/tmp"
+  },
+  "files": [ "node_modules/estella-core/typings/estella-core-full.d.ts" ],
+  "include": [
+    "src/**/*",
+    "lib/**/*"
+  ]
+}

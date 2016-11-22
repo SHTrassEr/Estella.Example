@@ -23,7 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gulpfile.js" />
-    <Content Include="index.html" />
     <Content Include="lib\qunit-2.0.1\qunit-2.0.1.css" />
     <Content Include="lib\qunit-2.0.1\qunit-2.0.1.js" />
   </ItemGroup>

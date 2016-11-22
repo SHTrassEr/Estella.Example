@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": false,
+    "module": "umd",
+    "target": "es6",
+    "outDir": "../../public/javascripts/Game"
+  },
+
+  "files": [
+    "../typings/matter-js/matter-js.d.ts",
+    "../typings/jquery/jquery.d.ts",
+    "../typings/pixi.js/pixi.js.d.ts",
+    "../../node_modules/estella-core/typings/estella-core-client.d.ts",
+    "../../node_modules/estella-example-tanks/typings/estella-example-tanks-client.d.ts",
+    "Tanks.ts"
+  ]
+
+
+}
