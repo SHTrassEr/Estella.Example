@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{78879612-974C-475A-9C8C-B5EB34B08AAF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <TypeScriptToolsVersion>2.0</TypeScriptToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="gulpfile.js" />
+    <Content Include="index.html" />
+    <Content Include="lib\qunit-2.0.1\qunit-2.0.1.css" />
+    <Content Include="lib\qunit-2.0.1\qunit-2.0.1.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="lib\typings\circular-json.d.ts" />
+    <TypeScriptCompile Include="lib\typings\matter-js.d.ts" />
+    <TypeScriptCompile Include="lib\typings\node.d.ts" />
+    <TypeScriptCompile Include="lib\typings\pixi.js.d.ts" />
+    <TypeScriptCompile Include="lib\typings\qunit.d.ts" />
+    <TypeScriptCompile Include="src\Client\Action\Impl\ClientAction.ts" />
+    <TypeScriptCompile Include="src\Client\Action\IClientAction.ts" />
+    <TypeScriptCompile Include="src\Client\Service\Impl\WebSocketGameClient.ts" />
+    <TypeScriptCompile Include="src\Client\Service\IWebSocketGameClient.ts" />
+    <TypeScriptCompile Include="src\Client\View\Impl\View.ts" />
+    <TypeScriptCompile Include="src\Core\Client\Entity\IClient.ts" />
+    <TypeScriptCompile Include="src\Core\Client\Service\IClientListService.ts" />
+    <TypeScriptCompile Include="src\Core\Client\Entity\Impl\Client.ts" />
+    <TypeScriptCompile Include="src\Core\Client\Service\Impl\ClientListService.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Entity\ICommand.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Entity\Impl\CommandMoveTo.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Service\Impl\CommandMoveToHandler.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Service\Impl\CommandInitWorldHandler.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Service\Impl\CommandHandler.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Service\Impl\CommandApplyForceHandler.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Entity\Impl\Command.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Entity\Impl\CommandChangeClientName.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Service\Impl\CommandChangeClientNameHandler.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Entity\Impl\CommandInitWorld.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Entity\Impl\CommandFire.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Service\Impl\CommandFireHandler.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Entity\Impl\CommandApplyForce.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Entity\Impl\CommandRegisterClient.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Entity\Impl\CommandCreateClientItemTank.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Service\Impl\CommandCreateClientItemTankHandler.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Service\Impl\CommandDispatcher.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Service\Impl\CommandRegisterClientHandler.ts" />
+    <TypeScriptCompile Include="src\Core\Entity\Impl\Entity.ts" />
+    <TypeScriptCompile Include="src\Core\Item\Entity\Impl\ItemPuck.ts" />
+    <TypeScriptCompile Include="src\Core\Item\Service\IItemListService.ts" />
+    <TypeScriptCompile Include="src\Core\Item\Entity\IItemRectangle.ts" />
+    <TypeScriptCompile Include="src\Core\Item\Entity\IItemTank.ts" />
+    <TypeScriptCompile Include="src\Core\Item\Service\Impl\IItemListService.ts" />
+    <TypeScriptCompile Include="src\Core\Item\Entity\Impl\Item.ts" />
+    <TypeScriptCompile Include="src\Core\Item\Entity\Impl\ItemWall.ts" />
+    <TypeScriptCompile Include="src\Core\Item\Entity\Impl\ItemBullet.ts" />
+    <TypeScriptCompile Include="src\Core\Item\Entity\IItem.ts" />
+    <TypeScriptCompile Include="src\Core\Client\Entity\Impl\ClientActive.ts" />
+    <TypeScriptCompile Include="src\Core\Client\Entity\IClientActive.ts" />
+    <TypeScriptCompile Include="src\Core\Process\Entity\Impl\Process.ts" />
+    <TypeScriptCompile Include="src\Core\Entity\Impl\Vector.ts" />
+    <TypeScriptCompile Include="src\Core\Entity\IVector.ts" />
+    <TypeScriptCompile Include="src\Core\Item\Entity\Impl\ItemTank.ts" />
+    <TypeScriptCompile Include="src\Core\Process\Entity\Impl\ProcessFire.ts" />
+    <TypeScriptCompile Include="src\Core\Process\Entity\Impl\ProcessMoveItem.ts" />
+    <TypeScriptCompile Include="src\Core\Process\Service\Impl\ProcessCreateClientItemTankHandler.ts" />
+    <TypeScriptCompile Include="src\Core\Process\Service\Impl\ProcessDispatcher.ts" />
+    <TypeScriptCompile Include="src\Core\Process\Entity\Impl\ProcessCreateClientItemTank.ts" />
+    <TypeScriptCompile Include="src\Core\Process\Service\Impl\ProcessFireHandler.ts" />
+    <TypeScriptCompile Include="src\Core\Process\Service\Impl\ProcessMoveItemHandler.ts" />
+    <TypeScriptCompile Include="src\Core\Process\Entity\IProcess.ts" />
+    <TypeScriptCompile Include="src\Core\Service\ICollisionService.ts" />
+    <TypeScriptCompile Include="src\Core\Service\IPhysicsEngine.ts" />
+    <TypeScriptCompile Include="src\Core\Service\IEngine.ts" />
+    <TypeScriptCompile Include="src\Core\Service\Impl\CollisionService.ts" />
+    <TypeScriptCompile Include="src\Core\Service\Impl\PhysicsEngine.ts" />
+    <TypeScriptCompile Include="src\Core\Service\Impl\Engine.ts" />
+    <TypeScriptCompile Include="src\Core\Util\MathHelper.ts" />
+    <TypeScriptCompile Include="src\Core\Util\VectorHelper.ts" />
+    <TypeScriptCompile Include="src\Core\World\Impl\WorldAttributeList.ts" />
+    <TypeScriptCompile Include="src\Core\World\Impl\World.ts" />
+    <TypeScriptCompile Include="src\Core\World\IWorldAttributeList.ts" />
+    <TypeScriptCompile Include="src\Core\World\IWorld.ts" />
+    <TypeScriptCompile Include="src\Core\ModuleInfo.ts" />
+    <TypeScriptCompile Include="src\Server\Export.ts" />
+    <TypeScriptCompile Include="src\Server\Service\Impl\WebSocketGameServer.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tsconfig.json" />
+    <Content Include="package.json" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>STSEngine.Example</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62850</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62850/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>gulp build-all</PostBuildEvent>
+  </PropertyGroup>
+</Project>
