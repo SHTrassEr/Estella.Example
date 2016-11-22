@@ -104,7 +104,6 @@
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
   </PropertyGroup>

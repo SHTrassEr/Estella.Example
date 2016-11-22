@@ -1,5 +1,5 @@
 {
-  "name": "estella-example-air-hockey",
+  "name": "estella-example-server",
   "version": "0.0.2",
   "description": "Estella example",
   "scripts": {
@@ -20,16 +20,19 @@
     "url": "https://github.com/SHTrassEr/Estella.Example/issues"
   },
   "homepage": "https://github.com/SHTrassEr/Estella.Example#readme",
-
   "dependencies": {
-    "estella-core": "0.0.2"
-  },
-  "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-insert": "^0.5.0",
     "gulp-typescript": "^3.0.0",
     "merge2": "^1.0.2",
-    "typescript": "^2.0.10"
+    "typescript": "^2.0.10",
+    "circular-json": "^0.3.1",
+    "estella-core": "0.0.2",
+    "express": "3.4.4",
+    "jade": "*",
+    "matter-js": "^0.11.1",
+    "stylus": "*",
+    "ws": "^1.1.1"
   }
 }

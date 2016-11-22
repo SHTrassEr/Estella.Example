@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": false,
+    "module": "umd",
+    "target": "es6"
+  },
+
+  "files": [
+    "Scripts/typings/matter-js/matter-js.d.ts",
+    "Scripts/typings/express/express.d.ts",
+    "Scripts/typings/node/node.d.ts",
+    "Scripts/typings/stylus/stylus.d.ts",
+
+    "node_modules/estella-core/typings/estella-core-server.d.ts",
+    "node_modules/estella-example-air-hockey/typings/estella-example-air-hockey-server.d.ts",
+    "app.ts"
+  ]
+
+
+}

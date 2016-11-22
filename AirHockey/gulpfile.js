@@ -1,13 +1,15 @@
-﻿/// <binding />
+﻿
+
+/// <binding />
 var gulp = require('gulp');
 var ts = require('gulp-typescript');
 var merge = require('merge2');
 var insert = require('gulp-insert');
 
-var nodeJsModuleDeclaration = '\ndeclare module \'Estella.Example.AirHockey/Server\' { export default Estella; }';
+var nodeJsModuleDeclaration = '\ndeclare module \'estella-example-air-hockey\' { export default Estella; }';
 var useStrict = '\'use strict\';\n';
 
-var importJsModule = 'var Estella = require(\'Estella.Core/Server\');\nvar Matter = require(\'matter-js/build/matter.js\');\nlet CircularJSON = require(\'circular-json\');\n';
+var importJsModule = 'var Estella = require(\'estella-core\');\nvar Matter = require(\'matter-js/build/matter.js\');\nlet CircularJSON = require(\'circular-json\');\n';
 
 var outLib = 'out/estella-example-air-hockey/lib';
 var outTypings = 'out/estella-example-air-hockey/typings';

@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estella.Example.AirHockey", "AirHockey\Estella.Example.AirHockey.csproj", "{78879612-974C-475A-9C8C-B5EB34B08AAF}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Estella.Example.Server", "Server\Estella.Example.Server.njsproj", "{5F7E3099-C0D3-4008-B2FE-A8775521B0A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{78879612-974C-475A-9C8C-B5EB34B08AAF} = {78879612-974C-475A-9C8C-B5EB34B08AAF}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{78879612-974C-475A-9C8C-B5EB34B08AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78879612-974C-475A-9C8C-B5EB34B08AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78879612-974C-475A-9C8C-B5EB34B08AAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F7E3099-C0D3-4008-B2FE-A8775521B0A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7E3099-C0D3-4008-B2FE-A8775521B0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7E3099-C0D3-4008-B2FE-A8775521B0A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7E3099-C0D3-4008-B2FE-A8775521B0A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
