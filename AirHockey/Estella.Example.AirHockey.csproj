@@ -36,7 +36,14 @@
     <TypeScriptCompile Include="src\Client\Action\IClientAction.ts" />
     <TypeScriptCompile Include="src\Client\Service\Impl\WebSocketGameClient.ts" />
     <TypeScriptCompile Include="src\Client\Service\IWebSocketGameClient.ts" />
-    <TypeScriptCompile Include="src\Client\View\Impl\View.ts" />
+    <TypeScriptCompile Include="src\Client\View\Item\Impl\ViewItemPuck.ts" />
+    <TypeScriptCompile Include="src\Client\View\Item\Impl\ViewItemMallet.ts" />
+    <TypeScriptCompile Include="src\Client\View\Item\IViewItemMallet.ts" />
+    <TypeScriptCompile Include="src\Client\View\Item\IViewItem.ts" />
+    <TypeScriptCompile Include="src\Client\View\Item\Impl\ViewItem.ts" />
+    <TypeScriptCompile Include="src\Client\View\Service\Impl\ViewItemListService.ts" />
+    <TypeScriptCompile Include="src\Client\View\Service\IViewItemListService.ts" />
+    <TypeScriptCompile Include="src\Client\View\Service\Impl\View.ts" />
     <TypeScriptCompile Include="src\Core\Client\Entity\IClient.ts" />
     <TypeScriptCompile Include="src\Core\Client\Service\IClientListService.ts" />
     <TypeScriptCompile Include="src\Core\Client\Entity\Impl\Client.ts" />
@@ -63,7 +70,7 @@
     <TypeScriptCompile Include="src\Core\Item\Entity\Impl\ItemPuck.ts" />
     <TypeScriptCompile Include="src\Core\Item\Service\IItemListService.ts" />
     <TypeScriptCompile Include="src\Core\Item\Entity\IItemRectangle.ts" />
-    <TypeScriptCompile Include="src\Core\Item\Entity\IItemTank.ts" />
+    <TypeScriptCompile Include="src\Core\Item\Entity\IItemMallet.ts" />
     <TypeScriptCompile Include="src\Core\Item\Service\Impl\IItemListService.ts" />
     <TypeScriptCompile Include="src\Core\Item\Entity\Impl\Item.ts" />
     <TypeScriptCompile Include="src\Core\Item\Entity\Impl\ItemWall.ts" />
@@ -74,7 +81,7 @@
     <TypeScriptCompile Include="src\Core\Process\Entity\Impl\Process.ts" />
     <TypeScriptCompile Include="src\Core\Entity\Impl\Vector.ts" />
     <TypeScriptCompile Include="src\Core\Entity\IVector.ts" />
-    <TypeScriptCompile Include="src\Core\Item\Entity\Impl\ItemTank.ts" />
+    <TypeScriptCompile Include="src\Core\Item\Entity\Impl\ItemMallet.ts" />
     <TypeScriptCompile Include="src\Core\Process\Entity\Impl\ProcessFire.ts" />
     <TypeScriptCompile Include="src\Core\Process\Entity\Impl\ProcessMoveItem.ts" />
     <TypeScriptCompile Include="src\Core\Process\Service\Impl\ProcessCreateClientItemTankHandler.ts" />
@@ -103,6 +110,7 @@
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
   </PropertyGroup>

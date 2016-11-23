@@ -11,7 +11,7 @@ namespace Estella.Example.AirHockey {
         }
 
         protected executeCommand(command: CommandMoveTo): void {
-            let item = this.world.getItemListService().getTyped<ItemTank>(command.getItemId(), ItemTank);
+            let item = this.world.getItemListService().getTyped<ItemMallet>(command.getItemId(), ItemMallet);
 
             item.setMoveToPosition(command.getPosition());
         }

@@ -18,7 +18,7 @@
         }
 
         protected moveItem(item: IItem): void {
-            if (item instanceof ItemTank) {
+            if (item instanceof ItemMallet) {
                 let moveTo = item.getMoveToPosition();
 
                 if (moveTo) {

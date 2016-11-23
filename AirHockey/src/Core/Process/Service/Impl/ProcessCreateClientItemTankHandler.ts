@@ -9,7 +9,7 @@
         }
 
         public initProcess(process: ProcessCreateClientItemTank): void {
-            let itemTank = this.world.getEntityFactory().create<ItemTank>(ItemTank);
+            let itemTank = this.world.getEntityFactory().create<ItemMallet>(ItemMallet);
             itemTank.setClientId(process.getClientId());
             itemTank.setPosition(new Vector(40, 40));
             itemTank.setForce(new Vector(0, 0));

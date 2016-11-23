@@ -15,16 +15,10 @@ namespace Estella.Example.AirHockey {
 
         protected renderer: PIXI.SystemRenderer;
         protected stage: PIXI.Container;
-        protected bulletSprite: PIXI.Graphics;
         protected grid: PIXI.Graphics;
         protected worldLimit: PIXI.Graphics;
 
-        protected objectMap: Map<number, PIXI.Graphics>;
-
-
         protected stepNumber: number;
-
-        protected clientInfoTextMap: Map<number, PIXI.Text>;
 
         protected clientListService: Core.IClientListService;
 
@@ -40,10 +34,16 @@ namespace Estella.Example.AirHockey {
         private touchStart: IVector;
         private touchIdentifier: number = null;
 
-        
+        protected viewItemListService: IViewItemListService;
 
-        constructor(rootElement: HTMLDivElement, world: IWorld) {
+
+        protected clientId: number;
+
+        constructor(rootElement: HTMLDivElement, world: IWorld, clientId: number) {
             super(rootElement, world);
+
+            this.clientId = clientId;
+
 
             this.width = world.getWorldAttributeList().getWorldSize()[0];
             this.height = world.getWorldAttributeList().getWorldSize()[1];
@@ -56,9 +56,6 @@ namespace Estella.Example.AirHockey {
             //this.renderer.roundPixels = true;
             this.rootElement.appendChild(this.renderer.view);
 
-            this.objectMap = new Map<number, PIXI.Graphics>();
-            this.clientInfoTextMap = new Map<number, PIXI.Text>();
-
             this.stage = new PIXI.Container();
 
             this.stage.interactive = true;
@@ -69,7 +66,11 @@ namespace Estella.Example.AirHockey {
             this.stage.on('touchstart', this.onStageMouseTouchStart.bind(this));
 
             this.stage.on('touchmove', this.onStageMouseTouchMove.bind(this));
-            
+
+            this.viewItemListService = new ViewItemListService(world.getItemListService(), this.clientId);
+            this.viewItemListService.afterAdd().on(this.afterItemAddHahdler.bind(this));
+            this.viewItemListService.afterRemove().on(this.afterItemRemoveHahdler.bind(this));
+
 
             this.grid = this.drawGrid();
             this.worldLimit = this.drawWordLimit();
@@ -78,12 +79,14 @@ namespace Estella.Example.AirHockey {
             this.stepNumber = -1;
 
             this.meter = <any>(new FPSMeter(rootElement, { position: "relative" }));
+        }
 
-            //this.stage.pivot.set(world.getWorldAttributeList().getWorldSize()[0] / 2, world.getWorldAttributeList().getWorldSize()[1] / 2);
+        protected afterItemAddHahdler(e: Core.EventEntityListService<IViewItem>): void {
+            this.stage.addChild(e.getEntity().getDisplayObject());
+        }
 
-            //this.stage.pivot.set(0, 0);
-
-            this.bulletSprite = this.drawBullet();
+        protected afterItemRemoveHahdler(e: Core.EventEntityListService<IViewItem>): void {
+            this.stage.removeChild(e.getEntity().getDisplayObject());
         }
 
         public getRenderer(): PIXI.SystemRenderer {
@@ -123,147 +126,23 @@ namespace Estella.Example.AirHockey {
                 this.touchIdentifier = event.data.identifier;
             }
         }
-        
-
-        protected getClientInfoText(client: Core.IClient) {
-
-            if (!this.clientInfoTextMap.has(client.getId())) {
-                let text = new PIXI.Text();
-                text.style.fill = 0xff1010;
-                text.style.font.fontsize(16);
-                text.width = 100;
-                text.height = 20;
-
-                text.position.y = text.height * (this.clientInfoTextMap.size + 1);
-                this.stage.addChild(text);
-                this.clientInfoTextMap.set(client.getId(), new PIXI.Text());
-            }
-
-            return this.clientInfoTextMap.get(client.getId());
-        }
-
-        protected updateClientInfo(client: IClientActive) {
-            let text = this.getClientInfoText(client);
-            text.text = client.getId() + " " + client.getScore();
-        }
-
-        protected updateAllClientInfo() {
-            for (var client of this.clientListService.getIterator()) {
-                if (client instanceof ClientActive) {
-                    this.updateClientInfo(client);
-                }
-            }
-        }
-
-        protected drawBullet(): PIXI.Graphics {
-            let objectWidth = 8;
-            let objectHeight = 8;
-
-            var graphics = new PIXI.Graphics();
-
-            graphics.beginFill(0xFFFF00);
-            graphics.lineStyle(1, 0x770000);
-
-            graphics.drawRect(0, 0, objectWidth, objectHeight);
-
-            graphics.pivot.set(objectWidth / 2, objectHeight / 2);
-            return graphics;
-        }
-
-        protected drawObjectRectangle(o: IItem & IItemRectangle): PIXI.Graphics {
-
-            if (o instanceof ItemBullet) {
-                return this.bulletSprite.clone();
-            }
-
-            let position = o.getPosition();
-
- 
-            let objectWidth = Math.floor(o.getWidth());
-            let objectHeight = Math.floor(o.getHeight());
-
-            var graphics = new PIXI.Graphics();
-
-            if (o.getClientId() == this.clientId) {
-                graphics.beginFill(0xFFFF00);
-                graphics.lineStyle(1, 0x0000AA);
-            } else {
-                graphics.beginFill(0xFFFF00);
-                graphics.lineStyle(1, 0x770000);
-            }
-            
-            graphics.drawCircle(0, 0, objectWidth / 2);
-            
-            graphics.pivot.set(0, 0);
-            return graphics;
-        }
-
-        protected getObjectSprite(o: IItem): PIXI.Graphics {
-
-            var objectSprite: PIXI.Graphics = this.objectMap.get(o.getId());
-            if (!objectSprite) {
-                objectSprite = this.drawObjectRectangle(<any>o);
-                this.objectMap.set(o.getId(), objectSprite);
-                this.stage.addChild(objectSprite);
-            }
-
-            return objectSprite;
-        }
-
-        protected clearStage(): void {
-            for (var id of this.objectMap.keys()) {
-                if (!this.itemListService.has(id)) {
-                    var child = this.objectMap.get(id);
-                    this.stage.removeChild(child);
-                    child.destroy();
-                    this.objectMap.delete(id);
-                }
-            }
-        }
-
 
         protected refresh(): void {
             
 
             if (this.worldAttributeList.getStepNumber() == this.stepNumber) {
-                //this.meter.tick();
                 return;
             }
 
             let iterator = this.itemListService.getIterator();
 
             this.meter.tickStart();
-            
-            this.stepNumber = this.worldAttributeList.getStepNumber();
 
-            this.clearStage();
-
-            for (let o of iterator) {
-                if (o instanceof Item) {
-                    let objectSprite = this.getObjectSprite(o);
-                    let x = Math.round(this.getDrawPoint(o.getPosition().x));
-                    let y = Math.round(this.getDrawPoint(o.getPosition().y));
-
-                    /*if (o instanceof ItemTank && o.getClientId() == this.clientId) {
-                        this.stage.pivot.set(x - this.width / 2, y - this.height / 2);
-                        //this.grid.position.set(x - this.width / 2, y - this.height / 2);
-
-                    }*/
-                    objectSprite.position.x = x;
-                    objectSprite.position.y = y;
-
-
-
-
-                }
-            }
-
+            this.viewItemListService.update();
             if (this.clientId != 1) {
                 this.stage.rotation = Math.PI;
                 this.stage.pivot.set(this.width, this.height);
             }
-
-            //this.updateAllClientInfo();
 
             this.renderer.render(this.stage);
             this.meter.tick();

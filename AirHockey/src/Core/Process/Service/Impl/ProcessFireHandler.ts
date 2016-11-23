@@ -9,7 +9,7 @@
         }
 
         public executeProcess(process: ProcessFire): void {
-            let item = this.world.getItemListService().getTyped<ItemTank>(process.getItemId(), ItemTank); 
+            let item = this.world.getItemListService().getTyped<ItemMallet>(process.getItemId(), ItemMallet); 
             if (item) {
                 this.fire(process, item);
             }
@@ -17,7 +17,7 @@
             process.setStatus(Core.ProcessStatus.Finished);
         }
 
-        protected fire(process: ProcessFire, item: ItemTank): void {
+        protected fire(process: ProcessFire, item: ItemMallet): void {
             var bullet = this.world.getEntityFactory().create<ItemBullet>(ItemBullet);
             bullet.setPosition(item.getPosition());
             bullet.setClientId(item.getClientId());

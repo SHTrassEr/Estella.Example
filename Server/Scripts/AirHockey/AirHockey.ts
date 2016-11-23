@@ -72,10 +72,12 @@ function ready() {
     engine.beforeStep().on(() => meter2.tickStart());
     engine.afterStep().on(() => meter2.tick());*/
 
-    var view = new Estella.Example.AirHockey.View(<HTMLDivElement>content, world);
+    let view: Estella.Example.AirHockey.View;
+
+
     function onClientConnected(client: Estella.Core.IWebSocketGameClient) {
 
-        view.setClientId(client.getClientId());
+        view = new Estella.Example.AirHockey.View(<HTMLDivElement>content, world, client.getClientId());
         view.start();
         view.mouseClick().on(onStageMouseClick);
         view.touchMove().on(onStageTouchMove);
@@ -147,7 +149,7 @@ function ready() {
 
         var itemList = world.getItemListService().getIterator();
         for (let item of itemList) {
-            if (item instanceof Estella.Example.AirHockey.ItemTank) {
+            if (item instanceof Estella.Example.AirHockey.ItemMallet) {
                 let v = item.getPosition();
                 str += JSON.stringify(v);
             }
@@ -163,7 +165,7 @@ function ready() {
     var up: boolean, down: boolean, left: boolean, right: boolean;//, fire: boolean;
 
     function getPlayerObject() {
-        var o = objectListService.getFirst(o => (<Estella.Example.AirHockey.ItemTank>(<any>o)).getClientId() == client.getClientId());
+        var o = objectListService.getFirst(o => (<Estella.Example.AirHockey.ItemMallet>(<any>o)).getClientId() == client.getClientId());
         return o;
     }
 

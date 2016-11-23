@@ -1,5 +1,5 @@
 ﻿namespace Estella.Example.AirHockey {
 
-    export interface IItemTank extends IItem {
+    export interface IItemMallet extends IItem {
     }
 }

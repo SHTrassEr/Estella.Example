@@ -39,7 +39,7 @@
             entityFactory.set(CommandRegisterClient);
 
             entityFactory.set(ItemBullet);
-            entityFactory.set(ItemTank);
+            entityFactory.set(ItemMallet);
             entityFactory.set(ItemWall);
             entityFactory.set(ItemPuck);
 

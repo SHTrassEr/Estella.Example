@@ -11,7 +11,7 @@ namespace Estella.Example.AirHockey {
         }
 
         protected executeCommand(command: CommandApplyForce): void {
-            let item = this.world.getItemListService().getTyped<IItemTank>(command.getItemId(), ItemTank);
+            let item = this.world.getItemListService().getTyped<IItemMallet>(command.getItemId(), ItemMallet);
 
             let force = command.getForce();
             VectorHelper.normalize(force);

@@ -98,12 +98,12 @@
                 let bodyA = this.world.getItemListService().get(p.bodyA.id);
                 let bodyB = this.world.getItemListService().get(p.bodyB.id);
                 
-                if (bodyA instanceof ItemBullet && bodyB instanceof ItemTank) {
+                if (bodyA instanceof ItemBullet && bodyB instanceof ItemMallet) {
                     this.processCollisionTankBullet(p, bodyB, bodyA);
                     continue;
                 }
 
-                if (bodyB instanceof ItemBullet && bodyA instanceof ItemTank) {
+                if (bodyB instanceof ItemBullet && bodyA instanceof ItemMallet) {
                     this.processCollisionTankBullet(p, bodyA, bodyB);
                     continue;
                 }
@@ -119,7 +119,7 @@
             }
         }
 
-        protected processCollisionTankBullet(p: Matter.IPair, tank: ItemTank, bullet: ItemBullet) {
+        protected processCollisionTankBullet(p: Matter.IPair, tank: ItemMallet, bullet: ItemBullet) {
             if (tank.getClientId() != bullet.getClientId()) {
 
                 let clientListService = this.world.getClientListService();
