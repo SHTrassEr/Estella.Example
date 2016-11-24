@@ -1,4 +1,6 @@
-﻿namespace Estella.Example.AirHockey {
+﻿/// <reference path="../../Entity/Impl/Entity.ts" />
+
+namespace Estella.Example.AirHockey {
 
     export class WorldAttributeList extends Core.WorldAttributeList implements IWorldAttributeList {
 
@@ -7,7 +9,11 @@
         constructor(attributeList?: Core.IAttributeList, kvpList?: Iterable<[number, any]>) {
             super(attributeList, kvpList);
 
-            this.setWorldSize([380, 520]);
+            this.setWorldSize([380, 580]);
+        }
+
+        public getTickLength(): number {
+            return 30;
         }
     
         public getWorldSize(): [number, number] {

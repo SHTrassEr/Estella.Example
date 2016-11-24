@@ -62,8 +62,8 @@
     <TypeScriptCompile Include="src\Core\Command\Service\Impl\CommandFireHandler.ts" />
     <TypeScriptCompile Include="src\Core\Command\Entity\Impl\CommandApplyForce.ts" />
     <TypeScriptCompile Include="src\Core\Command\Entity\Impl\CommandRegisterClient.ts" />
-    <TypeScriptCompile Include="src\Core\Command\Entity\Impl\CommandCreateClientItemTank.ts" />
-    <TypeScriptCompile Include="src\Core\Command\Service\Impl\CommandCreateClientItemTankHandler.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Entity\Impl\CommandCreateClientItem.ts" />
+    <TypeScriptCompile Include="src\Core\Command\Service\Impl\CommandCreateClientItemHandler.ts" />
     <TypeScriptCompile Include="src\Core\Command\Service\Impl\CommandDispatcher.ts" />
     <TypeScriptCompile Include="src\Core\Command\Service\Impl\CommandRegisterClientHandler.ts" />
     <TypeScriptCompile Include="src\Core\Entity\Impl\Entity.ts" />
@@ -84,7 +84,7 @@
     <TypeScriptCompile Include="src\Core\Item\Entity\Impl\ItemMallet.ts" />
     <TypeScriptCompile Include="src\Core\Process\Entity\Impl\ProcessFire.ts" />
     <TypeScriptCompile Include="src\Core\Process\Entity\Impl\ProcessMoveItem.ts" />
-    <TypeScriptCompile Include="src\Core\Process\Service\Impl\ProcessCreateClientItemTankHandler.ts" />
+    <TypeScriptCompile Include="src\Core\Process\Service\Impl\ProcessCreateClientItemHandler.ts" />
     <TypeScriptCompile Include="src\Core\Process\Service\Impl\ProcessDispatcher.ts" />
     <TypeScriptCompile Include="src\Core\Process\Entity\Impl\ProcessCreateClientItemTank.ts" />
     <TypeScriptCompile Include="src\Core\Process\Service\Impl\ProcessFireHandler.ts" />

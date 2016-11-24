@@ -66,11 +66,6 @@ function ready() {
     var world = client.getEngine().getWorld();
     var engine = client.getEngine();
 
-/*    engine.beforePhysicsEngineStep().on(() => meter1.tickStart());
-    engine.afterPhysicsEngineStep().on(() => meter1.tick());
-
-    engine.beforeStep().on(() => meter2.tickStart());
-    engine.afterStep().on(() => meter2.tick());*/
 
     let view: Estella.Example.AirHockey.View;
 
@@ -82,19 +77,6 @@ function ready() {
         view.mouseClick().on(onStageMouseClick);
         view.touchMove().on(onStageTouchMove);
         view.touchEnd().on(onStageTouchEnd);
-        
-
-        
-
-
-
-        /*setInterval(() => {
-            world.getAttributeList().setTickLength(50);
-            engine.step();
-        }, 50);
-        */
-
-        
 
         setInterval(updateScore, 100);
     }
@@ -102,7 +84,9 @@ function ready() {
     function onStageMouseClick(p: Estella.Example.AirHockey.IVector) {
 
         playerAction.moveTo(getPlayerObject().getId(), p);
-        fullscreen(view.getRenderer().view);
+
+        view.getRenderer().view.scrollIntoView(true);
+        //fullscreen(view.getRenderer().view);
     }
 
     function onStageTouchEnd(p: Estella.Example.AirHockey.IVector) {
@@ -113,15 +97,6 @@ function ready() {
 
         playerAction.moveTo(getPlayerObject().getId(), p);
 
-        //let o = getPlayerObject();
-        /*let v = o.getPosition();
-
-        let f = new Estella.Example.Vector(p);
-
-        Estella.Example.VectorHelper.substract(f, v);*/
-
-
-        //playerAction.setClientForceVector(o.getId(), p);
     }
 
     let scoreDiv = document.getElementById("score");
@@ -162,72 +137,13 @@ function ready() {
     var world = client.getEngine().getWorld();
     var objectListService = world.getItemListService();
 
-    var up: boolean, down: boolean, left: boolean, right: boolean;//, fire: boolean;
 
     function getPlayerObject() {
         var o = objectListService.getFirst(o => (<Estella.Example.AirHockey.ItemMallet>(<any>o)).getClientId() == client.getClientId());
         return o;
     }
 
-    function keyDownHandler(e: any) {
-        var playerObjectId = getPlayerObject().getId();
 
-        if (e.keyCode == 87) {
-            if (!up) {
-                up = true;
-                playerAction.setClientForce(playerObjectId, up, right, down, left);
-            }
-        }
-        else if (e.keyCode == 83) {
-            if (!down) {
-                down = true;
-                playerAction.setClientForce(playerObjectId, up, right, down, left);
-            }
-        }
-        else if (e.keyCode == 68) {
-            if (!right) {
-                right = true;
-                playerAction.setClientForce(playerObjectId, up, right, down, left);
-            }
-        }
-        else if (e.keyCode == 65) {
-            if (!left) {
-                left = true;
-                playerAction.setClientForce(playerObjectId, up, right, down, left);
-            }
-        }
-    }
-    function keyUpHandler(e: any) {
-        var playerObjectId = getPlayerObject().getId();
-        if (e.keyCode == 87) {
-            if (up) {
-                up = false;
-                playerAction.setClientForce(playerObjectId, up, right, down, left);
-            }
-        }
-        else if (e.keyCode == 83) {
-            if (down) {
-                down = false;
-                playerAction.setClientForce(playerObjectId, up, right, down, left);
-            }
-        }
-        else if (e.keyCode == 68) {
-            if (right) {
-                right = false;
-                playerAction.setClientForce(playerObjectId, up, right, down, left);
-            }
-        }
-        else if (e.keyCode == 65) {
-            if (left) {
-                left = false;
-                playerAction.setClientForce(playerObjectId, up, right, down, left);
-            }
-        }
-    }
-
-
-    document.addEventListener("keydown", keyDownHandler, false);
-    document.addEventListener("keyup", keyUpHandler, false);
 
     let nameInput = <HTMLInputElement>(document.getElementById("name-input"));
     nameInput.onchange = (event) => {

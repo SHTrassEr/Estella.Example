@@ -2,7 +2,7 @@
 
 namespace Estella.Example.AirHockey {
 
-    export class CommandCreateClientItemTank extends Command {
+    export class CommandCreateClientItem extends Command {
 
         private _clientId: number = ++this.lastAttributeId;
 
@@ -15,7 +15,7 @@ namespace Estella.Example.AirHockey {
         }
     }
 
-    export module CommandCreateClientItemTank {
-        export const type = ModuleInfo.name + '.' + CommandCreateClientItemTank.name;
+    export module CommandCreateClientItem {
+        export const type = ModuleInfo.name + '.' + CommandCreateClientItem.name;
     }
 }

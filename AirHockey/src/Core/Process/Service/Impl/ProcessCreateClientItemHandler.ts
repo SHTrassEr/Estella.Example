@@ -1,6 +1,6 @@
 ﻿namespace Estella.Example.AirHockey {
 
-    export class ProcessCreateClientItemTankHandler extends Core.ProcessHandler {
+    export class ProcessCreateClientItemHandler extends Core.ProcessHandler {
 
         protected world: IWorld;
 
@@ -14,7 +14,7 @@
             itemTank.setPosition(new Vector(40, 40));
             itemTank.setForce(new Vector(0, 0));
             itemTank.setFriction(1);
-            itemTank.setForceScale(0.01);
+            itemTank.setForceScale(0.02);
             itemTank.setMass(2);
 
             this.world.getItemListService().add(itemTank);

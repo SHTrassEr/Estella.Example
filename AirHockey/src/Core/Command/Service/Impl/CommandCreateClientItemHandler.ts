@@ -2,7 +2,7 @@
 
 namespace Estella.Example.AirHockey {
 
-    export class CommandCreateClientItemTankHandler extends CommandHandler {
+    export class CommandCreateClientItemHandler extends CommandHandler {
 
         protected world: IWorld;
 
@@ -10,18 +10,18 @@ namespace Estella.Example.AirHockey {
             super(world);
         }
 
-        protected executeCommand(command: CommandCreateClientItemTank): void {
+        protected executeCommand(command: CommandCreateClientItem): void {
             var process = this.world.getEntityFactory().create<ProcessCreateClientItemTank>(ProcessCreateClientItemTank);
             process.setClientId(command.getClientId());
             this.startProcess(process);
         }
 
-        protected isValidCommand(command: CommandCreateClientItemTank): boolean {
+        protected isValidCommand(command: CommandCreateClientItem): boolean {
             return this.isSystemCommand(command);
         }
 
         protected isValidCommandType(command: ICommand): boolean {
-            return command instanceof CommandCreateClientItemTank;
+            return command instanceof CommandCreateClientItem;
         }
     }
 }

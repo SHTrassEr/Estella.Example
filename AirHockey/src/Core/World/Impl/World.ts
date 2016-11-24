@@ -33,7 +33,7 @@
             entityFactory.set(CommandMoveTo);
             entityFactory.set(CommandApplyForce);
             entityFactory.set(CommandChangeClientName);
-            entityFactory.set(CommandCreateClientItemTank);
+            entityFactory.set(CommandCreateClientItem);
             entityFactory.set(CommandFire);
             entityFactory.set(CommandInitWorld);
             entityFactory.set(CommandRegisterClient);

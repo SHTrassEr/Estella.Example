@@ -43,7 +43,7 @@ namespace Estella.Example.AirHockey {
 
             let puck = entityFactory.create<ItemPuck>(ItemPuck);
             puck.setPosition(new Vector(size[0] / 2, size[1] / 2));
-            puck.setMass(2);
+            puck.setMass(4);
             itemListService.add(puck);
         }
 

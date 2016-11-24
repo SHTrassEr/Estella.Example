@@ -66,6 +66,7 @@ namespace Estella.Example.AirHockey {
             this.stage.on('touchstart', this.onStageMouseTouchStart.bind(this));
 
             this.stage.on('touchmove', this.onStageMouseTouchMove.bind(this));
+            this.stage.on('mousemove', this.onStageMouseTouchMove.bind(this));
 
             this.viewItemListService = new ViewItemListService(world.getItemListService(), this.clientId);
             this.viewItemListService.afterAdd().on(this.afterItemAddHahdler.bind(this));
@@ -134,8 +135,6 @@ namespace Estella.Example.AirHockey {
                 return;
             }
 
-            let iterator = this.itemListService.getIterator();
-
             this.meter.tickStart();
 
             this.viewItemListService.update();
@@ -168,6 +167,11 @@ namespace Estella.Example.AirHockey {
             graphics.beginFill(0xCCCCCC);
             graphics.lineStyle(2, 0x999999);
             graphics.drawRect(0, 0, width, height);
+
+            graphics.lineStyle(4, 0x333333);
+
+            graphics.moveTo(0, height / 2); 
+            graphics.lineTo(width, height / 2);
 
 
 
